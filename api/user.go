@@ -37,5 +37,5 @@ func (serv *Server) deleteUser(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, "Delete")
+	ctx.JSON(http.StatusOK, "Deleted")
 }

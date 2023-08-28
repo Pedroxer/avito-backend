@@ -19,8 +19,14 @@ func NewServer(db *sqlc.Queries) *Server {
 
 func (serv *Server) setUpRoutes() {
 	router := gin.Default()
+
 	router.POST("user", serv.createUser)
-	router.POST("user/delete", serv.deleteUser)
+	router.DELETE("user", serv.deleteUser)
+
+	router.POST("segment", serv.createSeg)
+	router.POST("segment/update", serv.updateSeg)
+	router.DELETE("segment", serv.deleteSeg)
+
 	serv.router = router
 }
 
