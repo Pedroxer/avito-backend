@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS "seg_to_user";
+DROP TABLE IF EXISTS "segments";
+DROP TABLE IF EXISTS "users";
