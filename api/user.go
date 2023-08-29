@@ -6,7 +6,7 @@ import (
 )
 
 type UserRequest struct {
-	Name string `json:"user_name" binding:"required,alphanum"` // TODO: Сделать валадицию только на цифры
+	ID int `json:"user_id" binding:"required"` // TODO: Сделать валадицию только на цифры
 }
 
 func (serv *Server) createUser(ctx *gin.Context) {
@@ -16,7 +16,7 @@ func (serv *Server) createUser(ctx *gin.Context) {
 		return
 	}
 
-	user, err := serv.db.CreateUser(ctx, req.Name)
+	user, err := serv.db.CreateUser(ctx, int32(req.ID))
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
@@ -32,7 +32,7 @@ func (serv *Server) deleteUser(ctx *gin.Context) {
 		return
 	}
 
-	err := serv.db.DeleteUser(ctx, req.Name)
+	err := serv.db.DeleteUser(ctx, int32(req.ID))
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return

@@ -4,9 +4,8 @@ CREATE TABLE "segments" (
 );
 
 CREATE TABLE "users" (
-  "id" integer PRIMARY KEY,
-  "name" varchar(10) UNIQUE NOT NULL
-
+  "id" integer PRIMARY KEY
+  
 );
 
 CREATE TABLE "seg_to_user" (
