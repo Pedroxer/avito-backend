@@ -4,13 +4,11 @@
 
 package sqlc
 
-import (
-	"database/sql"
-)
+import ()
 
 type SegToUser struct {
-	UserID sql.NullInt32 `json:"user_id"`
-	SegID  sql.NullInt32 `json:"seg_id"`
+	UserID int32 `json:"user_id"`
+	SegID  int32 `json:"seg_id"`
 }
 
 type Segment struct {
