@@ -64,3 +64,28 @@ func (serv *Server) getUserSegments(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, resp)
 }
+
+type removeSegFromUserRequest struct {
+	User_id int `json:"user_id" binding:"required"`
+	Seg_id  int `json:"seg_id" binding:"required"`
+}
+
+func (serv *Server) removeSegFromUser(ctx *gin.Context) {
+	var req removeSegFromUserRequest
+	if err := ctx.ShouldBindJSON(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+	arg := sqlc.RemoveSegFromUserParams{
+
+		int32(req.User_id),
+
+		int32(req.Seg_id),
+	}
+	err := serv.db.RemoveSegFromUser(ctx, arg)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+	ctx.JSON(http.StatusOK, "Removed")
+}

@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1526d33-a4ab-4799-8caf-06ea28751b0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/avito.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/avito.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/20230826232940_defMigration.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/20230826232940_defMigration.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/queries/user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/queries/user.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/sqlc/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/models.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/sqlc/user.sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/user.sql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/segToUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/segToUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +20,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2UfctBLwKHm4Hdi1qEEso2r5GLM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,7 +37,7 @@
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Repair__User",
+    "git-widget-placeholder": "Complete__segToUser",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/home/melrox",
@@ -68,14 +61,14 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Problems View" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32994187" />
-      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="bottom" id="Problems View" order="1" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32994187" />
+      <window_info anchor="bottom" id="Services" order="3" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="make" side_tool="true" />
       <window_info anchor="right" id="Meet New UI" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
-      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="1" weight="0.25" />
     </layout>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
