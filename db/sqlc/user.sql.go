@@ -10,21 +10,20 @@ import (
 )
 
 const createUser = `-- name: CreateUser :one
-INSERT INTO users (name) values ($1) RETURNING id, name
+INSERT INTO users (id) values ($1) RETURNING id
 `
 
-func (q *Queries) CreateUser(ctx context.Context, name string) (User, error) {
-	row := q.db.QueryRowContext(ctx, createUser, name)
-	var i User
-	err := row.Scan(&i.ID, &i.Name)
-	return i, err
+func (q *Queries) CreateUser(ctx context.Context, id int32) (int32, error) {
+	row := q.db.QueryRowContext(ctx, createUser, id)
+	err := row.Scan(&id)
+	return id, err
 }
 
 const deleteUser = `-- name: DeleteUser :exec
-DELETE FROM users WHERE name = $1
+DELETE FROM users WHERE id = $1
 `
 
-func (q *Queries) DeleteUser(ctx context.Context, name string) error {
-	_, err := q.db.ExecContext(ctx, deleteUser, name)
+func (q *Queries) DeleteUser(ctx context.Context, id int32) error {
+	_, err := q.db.ExecContext(ctx, deleteUser, id)
 	return err
 }

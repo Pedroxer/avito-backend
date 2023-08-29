@@ -4,13 +4,12 @@ CREATE TABLE "segments" (
 );
 
 CREATE TABLE "users" (
-    "id" bigserial PRIMARY KEY,
-    "name" text UNIQUE NOT NULL 
+    "id" bigserial PRIMARY KEY
 );
 
 CREATE TABLE "seg_to_user" (
-    "user_id" integer,
-    "seg_id" integer
+    "user_id" integer NOT NULL ,
+    "seg_id" integer NOT NULL
 );
 
 ALTER TABLE "seg_to_user" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
