@@ -7,7 +7,6 @@ package sqlc
 
 import (
 	"context"
-	"database/sql"
 )
 
 const addSegToUser = `-- name: AddSegToUser :one
@@ -15,8 +14,8 @@ INSERT INTO "seg_to_user" (user_id, seg_id) VALUES ($1, $2) RETURNING user_id, s
 `
 
 type AddSegToUserParams struct {
-	UserID sql.NullInt32 `json:"user_id"`
-	SegID  sql.NullInt32 `json:"seg_id"`
+	UserID int32 `json:"user_id"`
+	SegID  int32 `json:"seg_id"`
 }
 
 func (q *Queries) AddSegToUser(ctx context.Context, arg AddSegToUserParams) (SegToUser, error) {
@@ -30,7 +29,7 @@ const getSegOfUser = `-- name: GetSegOfUser :many
 SELECT user_id, seg_id FROM "seg_to_user" WHERE user_id = $1
 `
 
-func (q *Queries) GetSegOfUser(ctx context.Context, userID sql.NullInt32) ([]SegToUser, error) {
+func (q *Queries) GetSegOfUser(ctx context.Context, userID int32) ([]SegToUser, error) {
 	rows, err := q.db.QueryContext(ctx, getSegOfUser, userID)
 	if err != nil {
 		return nil, err
@@ -58,8 +57,8 @@ DELETE FROM "seg_to_user" WHERE user_id = $1 and seg_id = $2
 `
 
 type RemoveSegFromUserParams struct {
-	UserID sql.NullInt32 `json:"user_id"`
-	SegID  sql.NullInt32 `json:"seg_id"`
+	UserID int32 `json:"user_id"`
+	SegID  int32 `json:"seg_id"`
 }
 
 func (q *Queries) RemoveSegFromUser(ctx context.Context, arg RemoveSegFromUserParams) error {

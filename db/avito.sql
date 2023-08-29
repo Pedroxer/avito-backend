@@ -10,8 +10,8 @@ CREATE TABLE "users" (
 );
 
 CREATE TABLE "seg_to_user" (
-  "user_id" integer,
-  "seg_id" integer
+  "user_id" integer NOT NULL,
+  "seg_id" integer NOT NULL 
 );
 
 ALTER TABLE "seg_to_user" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");

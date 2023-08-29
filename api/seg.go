@@ -7,7 +7,7 @@ import (
 )
 
 type createSegRequest struct {
-	Name string `json:"seq_name" binding:"required"`
+	Name string `json:"seg_name" binding:"required"`
 }
 
 func (serv *Server) createSeg(ctx *gin.Context) {
@@ -46,7 +46,7 @@ func (serv *Server) updateSeg(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
 	}
-	seg, err := serv.db.GetSeq(ctx, arg.ID)
+	seg, err := serv.db.GetSeg(ctx, arg.ID)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return

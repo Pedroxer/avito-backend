@@ -29,12 +29,12 @@ func (q *Queries) DeleteSeg(ctx context.Context, id int64) error {
 	return err
 }
 
-const getSeq = `-- name: GetSeq :one
-SELECT id, name FROm "segments" where id = $1
+const getSeg = `-- name: GetSeg :one
+SELECT id, name FROM "segments" where id = $1
 `
 
-func (q *Queries) GetSeq(ctx context.Context, id int64) (Segment, error) {
-	row := q.db.QueryRowContext(ctx, getSeq, id)
+func (q *Queries) GetSeg(ctx context.Context, id int64) (Segment, error) {
+	row := q.db.QueryRowContext(ctx, getSeg, id)
 	var i Segment
 	err := row.Scan(&i.ID, &i.Name)
 	return i, err

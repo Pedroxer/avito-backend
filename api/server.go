@@ -27,6 +27,9 @@ func (serv *Server) setUpRoutes() {
 	router.POST("segment/update", serv.updateSeg)
 	router.DELETE("segment", serv.deleteSeg)
 
+	router.POST("usegment", serv.addSegToUser)
+	router.GET("usegment", serv.getUserSegments)
+
 	serv.router = router
 }
 
