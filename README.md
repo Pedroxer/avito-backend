@@ -7,10 +7,13 @@
 
 ## Чтобы запустить
 Загрузить с github:
-``` go get github.com/Pedroxer/avito-backend ```
+``` git clone git@github.com:Pedroxer/avito-backend.git ```
 
 ### Запуск:
+Выполнить в директории
+```
+docker compose up
+ ```
 
-``` docker compose up ```
 
   
